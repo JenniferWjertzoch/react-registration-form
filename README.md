@@ -69,3 +69,13 @@ The following technologies were used to build this project:
 You can run the unit tests using:
 
 `npm test`
+
+#### Integration Tests
+
+Run tests in the Cypress Test Runner UI:
+
+`npm run cy:open`
+
+Run tests in headless mode:
+
+`npm run cy:start`
