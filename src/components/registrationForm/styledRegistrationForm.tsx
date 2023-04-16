@@ -11,7 +11,7 @@ export const FormContainer = styled.div`
   justify-content: space-evenly;
   border: 2px solid #000;
   width: 600px;
-  padding: 10px;
+  padding: 0.625rem;
   margin: auto;
 
   @media (max-width: 768px) {
@@ -26,29 +26,29 @@ export const FormField = styled.div`
   width: 100%;
 
   &:first-child {
-    margin-right: 10px;
+    margin-right: 0.625rem;
 
     @media (max-width: 768px) {
       margin-right: 0;
-      margin-bottom: 10px;
+      margin-bottom: 0.625rem;
     }
   }
 
   input {
     border: 2px solid #000;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 0.625rem;
+    margin-bottom: 0.625rem;
   }
 
   label {
-    padding: 10px 0;
+    padding: 0.625rem 0;
   }
 
   .validation-icon-container {
     display: flex;
     align-items: flex-end;
-    padding: 10px 5px;
-    margin-bottom: 10px;
+    padding: 0.625rem 0.313rem;
+    margin-bottom: 0.625rem;
   }
 
   .validation-icon {
@@ -69,10 +69,10 @@ export const FormField = styled.div`
 `;
 
 export const SubmitButton = styled.button`
-  border: 2px solid #000;
   background-color: #000;
   color: #fff;
-  padding: 10px;
+  border: 2px solid #000;
+  padding: 0.625rem;
   cursor: ${props => (props.disabled ? 'not-allowed' : 'pointer')};
   opacity: ${props => (props.disabled ? '0.5' : '1')};
 `;

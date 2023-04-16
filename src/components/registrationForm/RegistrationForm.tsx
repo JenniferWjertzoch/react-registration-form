@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
 import { RxCross2, RxCheck } from 'react-icons/rx';
-import Header from './Header';
+import Header from '../header/Header';
 import { Wrapper, FormContainer, FormField, SubmitButton } from './styledRegistrationForm';
-
 
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Required'),

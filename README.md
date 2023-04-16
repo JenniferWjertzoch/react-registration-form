@@ -7,7 +7,7 @@ This is a simple registration form component consisting of two inputs (email and
 
 To install and run the project, follow these steps:
 
-Clone the repository: `git clone https://github.com/your-username/registration-form.git`
+Clone the repository: `git clone https://github.com/JenniferWjertzoch/react-registration-form.git`
 
 To install the dependencies run:
 
@@ -59,6 +59,8 @@ The following technologies were used to build this project:
 	* Add media queries for responsive design
 	* Improve accessibility of registration form component	
 
+- Assure Code Quality
+	* Unit tests and end-to-end tests for components
 ## Screenshots
 ![alt text](screens/screen.png)
 
