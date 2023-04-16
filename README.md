@@ -1,46 +1,63 @@
-# Getting Started with Create React App
+# Registration Form Component
+This is a simple registration form component consisting of two inputs (email and password), a password strength indicator, and a submit button. The component has been built using React, styled with CSS, and uses TypeScript for type-checking.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Jennifer Wjertzoch](mailto:wjertzochjennifer@gmail.com)
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+To install and run the project, follow these steps:
 
-### `npm start`
+Clone the repository: `git clone https://github.com/your-username/registration-form.git`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+To install the dependencies run:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`npm install`
 
-### `npm test`
+And to run the app:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm start`
 
-### `npm run build`
+Open the app in your browser at http://localhost:3000
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Usage
+Once the app is running, you can interact with the registration form by entering your email and password. The password strength indicator will update in real time to provide feedback on the strength of your password. The submit button will be enabled only when the password meets all of the required criteria:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- 8 or more characters
+- 1 or more lowercase letters
+- 1 or more uppercase letters
+- 1 or more decimal characters
+-	1 or more special characters
 
-### `npm run eject`
+## Libraries / Tools Used
+The following technologies were used to build this project:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- React
+- CSS
+- TypeScript
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Proposed Solution
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Breaking the UI into components
+	* Header
+	* Registration
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+- Creating the root component App.js
+	* Set up project structure and basic files
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Create registration form component
+	* Create registration form component with two inputs and labels
+	* Add password strength indicator to form
+	* Implement validation for password input using regular expressions
+	*	Disable submit button until password meets validation criteria
+
+
+- Style registration form component
+	* Style registration form component and password strength indicator
+	* Add media queries for responsive design
+	* Improve accessibility of registration form component	
+
+## Screenshots
+![alt text](screens/screen.png)
