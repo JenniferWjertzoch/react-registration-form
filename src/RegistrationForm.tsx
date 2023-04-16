@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Field } from 'formik';
 import * as Yup from 'yup';
-import './RegistrationForm.css';
 import { RxCross2, RxCheck } from 'react-icons/rx';
 import Header from './Header';
+import { Wrapper, FormContainer, FormField, SubmitButton } from './styledRegistrationForm';
 
 
 const validationSchema = Yup.object({
@@ -32,15 +32,15 @@ const RegistrationForm = () => {
   return (
 		<>
 			<Header />
-			<div className="wrapper">
+			<Wrapper>
       <Formik
         initialValues={formValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
         {({ isValid, errors, touched }) => (
-          <Form className="form">
-            <div className="form-field">
+          <FormContainer>
+            <FormField>
               <label htmlFor="email">Email</label>
               <Field type="email" name="email" id="email" />
               {errors.email && touched.email ? (
@@ -54,8 +54,8 @@ const RegistrationForm = () => {
                   <span className="validation-text validation-text-success">Valid email</span>
                 </div>
               ) : null}
-            </div>
-            <div className="form-field">
+            </FormField>
+            <FormField>
               <label htmlFor="password">Password</label>
               <Field type="password" name="password" id="password" />
               {errors.password && touched.password ? (
@@ -69,14 +69,14 @@ const RegistrationForm = () => {
                   <span className="validation-text validation-text-success">Valid password</span>
                 </div>
               ) : null}
-            <button type="button" disabled={!isValid} tabIndex={0} aria-label="Submit Registration Form">
+            <SubmitButton disabled={!isValid} tabIndex={0} aria-label="Submit Registration Form">
 							Submit
-						</button>
-            </div>
-          </Form>
+						</SubmitButton>
+            </FormField>
+          </FormContainer>
         )}
       </Formik>
-    </div>
+    </Wrapper>
 		</>
   );
 };

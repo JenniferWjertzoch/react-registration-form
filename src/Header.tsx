@@ -1,11 +1,12 @@
 import React from 'react';
-import './Header.css';
+import { HeaderWrapper, Headline } from './styledHeader';
+
 
 const Header = () => {
   return (
-    <header>
-      <h1>Registration</h1>
-    </header>
+    <HeaderWrapper>
+      <Headline>Registration</Headline>
+    </HeaderWrapper>
   );
 };
 
