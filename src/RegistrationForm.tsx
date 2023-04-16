@@ -1,15 +1,19 @@
 import { useState } from 'react';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import './RegistrationForm.css';
+import { RxCross2, RxCheck } from 'react-icons/rx';
+import Header from './Header';
+
 
 const validationSchema = Yup.object({
   email: Yup.string().email('Invalid email address').required('Required'),
   password: Yup.string()
-    .min(8, 'Password must be at least 8 characters')
-    .matches(/[a-z]/, 'Password must contain at least one lowercase letter')
-    .matches(/[A-Z]/, 'Password must contain at least one uppercase letter')
-    .matches(/[0-9]/, 'Password must contain at least one digit')
-    .matches(/[^A-Za-z0-9]/, 'Password must contain at least one special character')
+    .min(8, '8+ characters')
+    .matches(/[a-z]/, 'lowercase letter')
+    .matches(/[A-Z]/, 'uppercase letter')
+    .matches(/[0-9]/, 'number')
+    .matches(/[^A-Za-z0-9]/, 'special character')
     .required('Required'),
 });
 
@@ -26,32 +30,54 @@ const RegistrationForm = () => {
   };
 
   return (
-    <div>
-      <h1>Registration Form</h1>
+		<>
+			<Header />
+			<div className="wrapper">
       <Formik
         initialValues={formValues}
         validationSchema={validationSchema}
         onSubmit={handleSubmit}
       >
-        {({ isValid }) => (
-          <Form>
-            <div>
+        {({ isValid, errors, touched }) => (
+          <Form className="form">
+            <div className="form-field">
               <label htmlFor="email">Email</label>
               <Field type="email" name="email" id="email" />
-              <ErrorMessage name="email" />
+              {errors.email && touched.email ? (
+                <div className="validation-icon-container">
+                  <RxCross2 className="validation-icon validation-icon-error" />
+                  <span className="validation-text validation-text-error">{errors.email}</span>
+                </div>
+              ) : touched.email ? (
+                <div className="validation-icon-container">
+                  <RxCheck className="validation-icon validation-icon-success" />
+                  <span className="validation-text validation-text-success">Valid email</span>
+                </div>
+              ) : null}
             </div>
-            <div>
+            <div className="form-field">
               <label htmlFor="password">Password</label>
               <Field type="password" name="password" id="password" />
-              <ErrorMessage name="password" />
+              {errors.password && touched.password ? (
+                <div className="validation-icon-container">
+                  <RxCross2 className="validation-icon validation-icon-error" />
+                  <span className="validation-text validation-text-error">{errors.password}</span>
+                </div>
+              ) : touched.password ? (
+                <div className="validation-icon-container">
+                  <RxCheck className="validation-icon validation-icon-success" />
+                  <span className="validation-text validation-text-success">Valid password</span>
+                </div>
+              ) : null}
+            <button type="button" disabled={!isValid} tabIndex={0} aria-label="Submit Registration Form">
+							Submit
+						</button>
             </div>
-            <button type="submit" disabled={!isValid}>
-              Submit
-            </button>
           </Form>
         )}
       </Formik>
     </div>
+		</>
   );
 };
 
