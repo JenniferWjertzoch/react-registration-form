@@ -61,3 +61,11 @@ The following technologies were used to build this project:
 
 ## Screenshots
 ![alt text](screens/screen.png)
+
+### Running the tests
+
+#### Unit Tests
+
+You can run the unit tests using:
+
+`npm test`
